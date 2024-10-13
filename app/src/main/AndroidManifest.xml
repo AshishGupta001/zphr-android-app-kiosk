@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zphr.kiosk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+
+    <!--KIOSK MODE RELATED PERMISSION START -->
+    <!--  <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
+      <uses-permission android:name="android.permission.REORDER_TASKS" />-->
+    <!--KIOSK MODE RELATED PERMISSION END-->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+    <!--<supports-screens android:requiresSmallestWidthDp="600" />-->
+
+    <permission
+        android:name="com.zphr.kiosk.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
+    <uses-permission
+        android:name="com.zphr.kiosk.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.general.files.MyApp"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppCompatTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <!--KIOSK MODE RELATED CHANGES START -->
+        <!--    <receiver
+                android:name=".MyDeviceAdminReceiver"
+                android:description="@string/app_name"
+                android:label="@string/app_name"
+                android:permission="android.permission.BIND_DEVICE_ADMIN">
+                <meta-data
+                    android:name="android.app.device_admin"
+                    android:resource="@xml/device_admin_receiver"/>
+                <intent-filter>
+                    <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                </intent-filter>
+            </receiver>-->
+        <!--KIOSK MODE RELATED CHANGES END -->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_android_geo_api_key" />
+        <meta-data
+            android:name="com.google.key1"
+            android:value="$2y$05$bQXz96EnXIJqLTK4Es3HsOZhvtH443XcWHyK0jz3I35gBdTbOc4Hi3950a5b2450af6105ac8b4222dd3fc18$2y$05$/VnqCEEk2X4xAliFRWziN.SiLW4x22TJNQZW7znYMJDQpJp/Qg2oi3950a5b2450af6105ac8b4222dd3fc18$2y$05$qooxVn0whDlCZndRlF0xw.3oekwom3hEq038OxeD95wVVWP1LGh963950a5b2450af6105ac8b4222dd3fc18$2y$05$kELajtRFg3ew1Vn9hTnsX.Ks5pI89Vi0bPulJ9tPlH7IlzMh8Y/si3950a5b2450af6105ac8b4222dd3fc18$2y$05$vf323ZhX7xGGcJusblJ.fu/sm01LvOSjas9AQre6M2vcdG4//NUiu3950a5b2450af6105ac8b4222dd3fc18$2y$05$kuE5Rl4KEqg/K6oz0ARHSuaJ1nl0rKjeLlNU3tQufudV6aP50naTG3950a5b2450af6105ac8b4222dd3fc18$2y$05$xCdz0fZEtkHR6SlvtszD5uJDwV2KwDFI3S7m2vkHVALu6UMAdLUFe3950a5b2450af6105ac8b4222dd3fc18$2y$05$rCpdA3beSYmralh7kMYkEu3tD9zl0mH5JSD6xyO2ml4GIBj/QgYEu3950a5b2450af6105ac8b4222dd3fc18$2y$05$DEM/XHBt1WAMv222QBesk.o5VbQlrnXZWj112yu9qpYNxFrhjtHPy3950a5b2450af6105ac8b4222dd3fc18$2y$05$depmjY2y4m66K.z7DUe3iuJX5rCGaa9KP4XHFpendxlatnjyn2EXu" />
+        <meta-data
+            android:name="com.google.key2"
+            android:value="3950a5b2450af6105ac8b4222dd3fc18" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3137346768994554~2524650086" />
+
+
+        <receiver
+            android:name="com.general.files.AlarmReceiver"
+            android:enabled="false"></receiver>
+
+        <service
+            android:name="com.zphr.kiosk.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--<receiver
+            android:name="com.zphr.kiosk.StartServiceReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="com.cubejek.user.StartServiceReceiver" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+            </intent-filter>
+        </receiver>
+-->
+
+
+        <activity
+            android:name="com.zphr.kiosk.LauncherActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:exported="true"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--KIOSK MODE RELATED CHANGES START -->
+                <!--      <category android:name="android.intent.category.HOME" />
+                      <category android:name="android.intent.category.DEFAULT" />-->
+                <!--KIOSK MODE RELATED CHANGES START -->
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.zphr.kiosk.SelectCountryActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name="com.zphr.kiosk.SearchPickupLocationActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name="com.zphr.kiosk.AppLoignRegisterActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.zphr.kiosk.FareBreakDownActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.zphr.kiosk.ForgotPasswordActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+
+        <receiver
+            android:name="com.zphr.kiosk.FirebaseDataReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.zphr.kiosk.SearchLocationActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name="com.zphr.kiosk.MaintenanceActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+
+
+        <activity
+            android:name="com.zphr.kiosk.ContactUsActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape" />
+
+        <!--Kiosk Start-->
+        <activity
+            android:name="com.zphr.kiosk.KioskLandingScreenActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape"></activity>
+
+        <activity
+            android:name="com.zphr.kiosk.KioskCabSelectionActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape"></activity>
+
+        <activity
+            android:name="com.zphr.kiosk.KioskBookNowActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape"></activity>
+
+        <activity
+            android:name="com.zphr.kiosk.KioskBookingDetailsActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape"></activity>
+
+        <activity
+            android:name="com.zphr.kiosk.PaymentWebviewActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="landscape"/>
+
+        <!--Kiosk End-->
+
+    </application>
+
+</manifest>

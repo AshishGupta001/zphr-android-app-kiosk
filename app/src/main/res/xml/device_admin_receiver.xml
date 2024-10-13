@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device-admin>
+    <uses-policies>
+        <limit-password />
+        <watch-login />
+        <reset-password />
+        <force-lock />
+        <wipe-data />
+        <expire-password />
+        <encrypted-storage />
+        <disable-camera />
+        <disable-keyguard-features />
+    </uses-policies>
+</device-admin>
+
+<!--
+
+layout-sw600dp-land -> # For 7” tablets in landscape
+
+layout-large -> # For small tablets (640dp x 480dp and bigger)
+
+layout-xlarge -> # For large tablets (960dp x 720dp and bigger)
+
+-->

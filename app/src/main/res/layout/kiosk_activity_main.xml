@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/cabSelectionArea"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#ededed"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_hotelImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_sample_image"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/rduTollbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appThemeColor_bg_parent_1"
+            android:visibility="visible">
+
+            <include
+                android:id="@+id/toolbar_include"
+                layout="@layout/design_toolbar_general" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="@dimen/_95sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_gravity="end|center|top"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:adjustViewBounds="true"
+                    android:gravity="end|center|top"
+                    android:textAlignment="viewEnd"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/dragView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top|bottom"
+            android:layout_marginBottom="15dp"
+            android:gravity="center|top|bottom">
+
+            <com.view.MTextView
+                android:id="@+id/btn_type2"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/all_btn_height2"
+                android:layout_gravity="center"
+                android:background="@drawable/additemshape"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white_button_text_color"
+                android:textSize="@dimen/_12sdp"
+                app:customTypeFace="@string/robotomediumFont"
+                tool:text="Next" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,167 @@
+{
+  "project_info": {
+    "project_number": "724907614786",
+    "firebase_url": "https://vsystem-zphr-default-rtdb.firebaseio.com",
+    "project_id": "vsystem-zphr",
+    "storage_bucket": "vsystem-zphr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724907614786:android:ef01d2888cb6376a32c3db",
+        "android_client_info": {
+          "package_name": "com.zphr.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724907614786-4tf8a28vbbckil6bruu6r5gm1k85ict1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zphr.driver",
+            "certificate_hash": "4a2e0636fb963a59002a85225047800e98c528dc"
+          }
+        },
+        {
+          "client_id": "724907614786-oe95ruh0spoun9uql7d2eeg0r7r6u6u4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zphr.driver",
+            "certificate_hash": "b25341836fe012dd46b70a24e3bb702b10468d69"
+          }
+        },
+        {
+          "client_id": "724907614786-vi6bqemkjst1u2nq1s3tsa1a4j8dgfo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnPfKefr3FK90qpoiXSO-BymnHayKwi00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724907614786-t2ac7126bu69tjbgdmbbf7eemt607it8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "724907614786-12stspnc790c7p9d0jd1r3m8a08qn2aj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zphr.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724907614786:android:11d552ed72f2866f32c3db",
+        "android_client_info": {
+          "package_name": "com.zphr.kiosk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724907614786-a839fb5h2sb1li6fsbsdk8bac627aho3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zphr.kiosk",
+            "certificate_hash": "b25341836fe012dd46b70a24e3bb702b10468d69"
+          }
+        },
+        {
+          "client_id": "724907614786-ele35gbjl2ns4luj5o1pl7rrd4fnecao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zphr.kiosk",
+            "certificate_hash": "4a2e0636fb963a59002a85225047800e98c528dc"
+          }
+        },
+        {
+          "client_id": "724907614786-vi6bqemkjst1u2nq1s3tsa1a4j8dgfo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnPfKefr3FK90qpoiXSO-BymnHayKwi00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724907614786-t2ac7126bu69tjbgdmbbf7eemt607it8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "724907614786-12stspnc790c7p9d0jd1r3m8a08qn2aj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zphr.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724907614786:android:5de79a06470c682d32c3db",
+        "android_client_info": {
+          "package_name": "com.zphr.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724907614786-1tv6lmtfphovcgsv4lqfns8nht23esvv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zphr.user",
+            "certificate_hash": "4a2e0636fb963a59002a85225047800e98c528dc"
+          }
+        },
+        {
+          "client_id": "724907614786-mbl4taej37a4c5ohgc94edtcdifo99tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zphr.user",
+            "certificate_hash": "b25341836fe012dd46b70a24e3bb702b10468d69"
+          }
+        },
+        {
+          "client_id": "724907614786-vi6bqemkjst1u2nq1s3tsa1a4j8dgfo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnPfKefr3FK90qpoiXSO-BymnHayKwi00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724907614786-t2ac7126bu69tjbgdmbbf7eemt607it8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "724907614786-12stspnc790c7p9d0jd1r3m8a08qn2aj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zphr.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/relDestinationList"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/layout_square_bg"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:gravity="start|center"
+                android:textAlignment="viewStart"
+                android:layout_gravity="start|center"
+                android:id="@+id/txtAddress"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:paddingStart="15dp"
+                android:singleLine="true"
+                android:text="Air Port"
+                app:customTypeFace="@string/robotomediumFont"
+                app:fontFamily="@string/robotomediumFont"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+
+            <ImageView
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:gravity="end|center"
+                android:src="@drawable/ic_play_arrow"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

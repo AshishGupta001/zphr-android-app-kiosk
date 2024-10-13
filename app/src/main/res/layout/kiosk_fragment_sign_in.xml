@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/contentArea"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.fragments.SignInFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/countryArea"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <include
+                    android:id="@+id/countryBox"
+                    layout="@layout/kiosk_editbox_form_design"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.30" />
+
+                <ImageView
+                    android:id="@+id/countrydropimage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginBottom="15dp"
+                    android:clickable="false"
+                    android:src="@mipmap/ic_down_arrow"
+                    android:tint="#bfbfbf" />
+
+                <ImageView
+                    android:id="@+id/countrydropimagerror"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginBottom="25dp"
+                    android:clickable="false"
+                    android:src="@mipmap/ic_down_arrow"
+                    android:tint="#bfbfbf"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <include
+                android:id="@+id/emailBox"
+                layout="@layout/kiosk_editbox_form_design"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.70" />
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/passwordBox"
+            layout="@layout/editbox_form_design"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/btn_type2"
+        layout="@layout/btn_type_2"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/all_btn_height"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center|bottom"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="49dp" />
+
+    <LinearLayout
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.view.MTextView
+            android:id="@+id/forgetPassTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/appThemeColor_1"
+            android:textSize="@dimen/txt_size_14"
+            app:customTypeFace="roboto_light" />
+
+        <com.view.MTextView
+            android:visibility="gone"
+            android:id="@+id/registerTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Don't have an account?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size_20"
+            app:customTypeFace="roboto_light" />
+    </LinearLayout>
+
+</LinearLayout>

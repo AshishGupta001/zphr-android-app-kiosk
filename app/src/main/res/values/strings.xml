@@ -1,0 +1,46 @@
+<resources>
+
+
+    <string name="google_android_geo_api_key">AIzaSyAnPfKefr3FK90qpoiXSO-BymnHayKwi00</string>
+
+
+    <string name="app_name">ZPHR-Hotel/Corp</string>
+
+    <string name="defaultFont">fonts/roboto_light.ttf</string>
+
+    <string name="robotomediumFont">fonts/roboto_medium.ttf</string>
+
+    <string name="robotolightFont">fonts/roboto_light.ttf</string>
+    <string name="robotobold">fonts/roboto_bold.ttf</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="html" translatable="false">
+        <![CDATA[
+        <html>
+            <head></head>
+            <body>%1$s</body>
+        </html>"
+        ]]>
+    </string>
+
+    <string name="html_rtl" translatable="false">
+        <![CDATA[
+        <html dir="rtl">
+            <head></head>
+            <body>%1$s</body>
+        </html>"
+        ]]>
+    </string>
+
+
+    <!-- Cropper Strings-->
+    <!-- Cropper Strings-->
+
+
+    <!--Kiosk Mode-->
+    <string name="device_admin_warning">Warning: Device Admin is going to be disabled.</string>
+    <string name="kiosk_not_permitted">Kiosk Mode not permitted</string>
+    <string name="not_device_owner">This app is not the device owner!</string>
+
+</resources>

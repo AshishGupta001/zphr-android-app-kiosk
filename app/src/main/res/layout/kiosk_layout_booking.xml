@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rootRelView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <LinearLayout
+            android:id="@+id/rduTollbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <include layout="@layout/design_toolbar_general" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/cabSelectionArea"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_below="@+id/rduTollbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="70"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <RelativeLayout
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:id="@+id/dragView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center|top|bottom"
+                android:layout_gravity="center|top|bottom"
+                android:layout_weight="25"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <com.view.MTextView
+                    app:customTypeFace="@string/robotomediumFont"
+                    android:id="@+id/btn_type2"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/all_btn_height2"
+                    android:layout_gravity="center"
+                    android:background="@drawable/additemshape"
+                    android:gravity="center"
+                    android:text="proceed"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white_button_text_color"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/mainArea"
+            android:layout_below="@+id/rduTollbar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="70"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_below="@+id/rduTollbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+
+                    <FrameLayout
+                        android:id="@+id/mainContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+
+                        <fragment
+                            android:id="@+id/mapV2"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/prefBtnImageView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="70dp"
+                        android:src="@mipmap/pref"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/userLocBtnImgView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@mipmap/ic_my_location"
+                        android:visibility="visible" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/headerContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent" />
+
+                    <ProgressBar
+                        android:id="@+id/LoadingMapProgressBar"
+                        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bookingDetailArea"
+                android:layout_weight="30"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <include
+                    layout="@layout/kiosk_design_cab_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <com.view.anim.loader.AVLoadingIndicatorView
+            android:id="@+id/loaderView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            app:indicator="BallSpinFadeLoader"
+            app:indicator_color="#000000" />
+
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
