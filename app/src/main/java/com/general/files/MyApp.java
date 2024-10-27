@@ -28,13 +28,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.multidex.MultiDex;
 
-import com.zphr.kiosk.BuildConfig;
-import com.zphr.kiosk.KioskBookNowActivity;
-import com.zphr.kiosk.KioskLandingScreenActivity;
-import com.zphr.kiosk.LauncherActivity;
-import com.zphr.kiosk.MaintenanceActivity;
-import com.zphr.kiosk.NetworkChangeReceiver;
-import com.zphr.kiosk.R;
 import com.service.handler.ApiHandler;
 import com.service.handler.AppService;
 import com.squareup.picasso.Picasso;
@@ -42,6 +35,13 @@ import com.utils.CommonUtilities;
 import com.utils.Utils;
 import com.view.GenerateAlertBox;
 import com.view.MTextView;
+import com.zphr.kiosk.BuildConfig;
+import com.zphr.kiosk.KioskBookNowActivity;
+import com.zphr.kiosk.KioskLandingScreenActivity;
+import com.zphr.kiosk.LauncherActivity;
+import com.zphr.kiosk.MaintenanceActivity;
+import com.zphr.kiosk.NetworkChangeReceiver;
+import com.zphr.kiosk.R;
 
 import java.util.HashMap;
 
@@ -172,13 +172,17 @@ public class MyApp extends Application {
 
 
     private void registerReceiver() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.FROYO) {
-
-            IntentFilter mIntentFilter = new IntentFilter();
-            mIntentFilter.addAction(LocationManager.PROVIDERS_CHANGED_ACTION);
-
-            this.mGpsReceiver = new GpsReceiver();
-            this.registerReceiver(this.mGpsReceiver, mIntentFilter);
+        IntentFilter mIntentFilter = new IntentFilter();
+        this.mGpsReceiver = new GpsReceiver();
+        mIntentFilter.addAction(LocationManager.PROVIDERS_CHANGED_ACTION);
+        try {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                this.registerReceiver(this.mGpsReceiver, mIntentFilter, Context.RECEIVER_EXPORTED);
+            } else {
+                this.registerReceiver(this.mGpsReceiver, mIntentFilter);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -195,7 +199,15 @@ public class MyApp extends Application {
             IntentFilter mIntentFilter = new IntentFilter();
             mIntentFilter.addAction(String.format("%s%s%s%s%s", "Act", "ivi", "tyR", "egis", "ter"));
             this.actRegisterReceiver = new ActRegisterReceiver();
-            this.registerReceiver(this.actRegisterReceiver, mIntentFilter);
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                    this.registerReceiver(this.actRegisterReceiver, mIntentFilter, Context.RECEIVER_EXPORTED);
+                } else {
+                    this.registerReceiver(this.actRegisterReceiver, mIntentFilter);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -226,7 +238,11 @@ public class MyApp extends Application {
 //                mIntentFilter.addAction("android.net.wifi.WIFI_STATE_CHANGED");
 
                 this.mNetWorkReceiver = new NetworkChangeReceiver();
-                this.registerReceiver(this.mNetWorkReceiver, mIntentFilter);
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                    this.registerReceiver(this.mNetWorkReceiver, mIntentFilter, Context.RECEIVER_EXPORTED);
+                } else {
+                    this.registerReceiver(this.mNetWorkReceiver, mIntentFilter);
+                }
             } catch (Exception e) {
             }
         }

@@ -32,12 +32,12 @@ android {
             abortOnError false
         }
     }
-    compileSdkVersion 33
+    compileSdk 34
     buildToolsVersion '33.0.0'
     defaultConfig {
         applicationId "com.zphr.kiosk"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 3
         versionName "1.2"
         multiDexEnabled true
